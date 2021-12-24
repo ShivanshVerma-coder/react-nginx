@@ -8,3 +8,12 @@ before_install:
 
 script:
   - docker run -e CI=true shivanshverma/react-nginx npm run test
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-2"
+#   app: "docker"
+#   env: "Docker-env"
+#   bucket_name: "elasticbeanstalk-us-west-2-{id}"
+#   bucket_path: "docker"
+#   on:
+#     branch: "master"
