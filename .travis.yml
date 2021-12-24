@@ -1,0 +1,10 @@
+language: generic
+sodu: required
+services:
+  - docker
+
+before_install:
+  - docker build -f dockerfile.dev -t shivanshverma/react-nginx .
+
+script:
+  - docker run -e CI=true shivanshverma/react-nginx npm run test
